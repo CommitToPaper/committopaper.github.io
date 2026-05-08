@@ -44,20 +44,31 @@
     }
 
     header {
-      padding: 1.5rem 2rem;
-      border-bottom: 4px solid var(--amber);
+      display: flex;
+      align-items: center;
+      gap: 2em;
+      padding: 1.5em 2em;
+      border-bottom: 0.35em solid var(--amber);
     }
 
     .logo {
-      width: 12rem;
-      max-width: 70%;
+      width: 12em;
+      max-width: 40%;
       height: auto;
       display: block;
+      flex: 0 0 auto;
+    }
+
+    .header-title {
+      margin: 0;
+      color: var(--teal);
+      font-size: clamp(1.6em, 4vw, 2.6em);
+      line-height: 1.15;
     }
 
     main {
       flex: 1;
-      padding: 4rem 2rem;
+      padding: 4em 2em;
       display: flex;
       align-items: center;
     }
@@ -66,72 +77,50 @@
       max-width: 42em;
     }
 
-    h1 {
-      margin: 0 0 1rem;
-      color: var(--teal);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.1;
-    }
-
-    .lead {
-      margin: 0 0 1.5rem;
-      font-size: 1.25rem;
+    p {
+      margin: 0 0 1em;
       line-height: 1.6;
     }
 
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 2rem 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .services li {
-      padding: 0.6rem 0.9rem;
-      background: var(--pale-teal);
-      border-left: 4px solid var(--teal);
-      font-weight: bold;
-    }
-
     footer {
-      padding: 2rem;
-      background: var(--teal);
-      color: #ffffff;
+      padding: 2em;
+      background: var(--pale-teal);
+      color: var(--text);
+      border-top: 0.35em solid var(--amber);
     }
 
     footer h2 {
-      margin: 0 0 1rem;
-      font-size: 1.4rem;
+      margin: 0 0 1em;
+      font-size: 1.4em;
+      color: var(--teal);
     }
 
     form {
       display: grid;
-      gap: 0.8rem;
+      gap: 0.8em;
     }
 
     label {
       display: grid;
-      gap: 0.3rem;
+      gap: 0.3em;
       font-weight: bold;
     }
 
     input, textarea {
       width: 100%;
-      padding: 0.75rem;
-      border: 0;
+      padding: 0.75em;
+      border: 1px solid var(--light-teal);
       font: inherit;
     }
 
     textarea {
-      min-height: 8rem;
+      min-height: 8em;
       resize: vertical;
     }
 
     button {
       width: fit-content;
-      padding: 0.8rem 1.2rem;
+      padding: 0.8em 1.2em;
       border: 0;
       background: var(--amber);
       color: var(--text);
@@ -143,34 +132,39 @@
     button:hover {
       background: var(--orange);
     }
+
+    @media (max-width: 38em) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1em;
+      }
+
+      .logo {
+        max-width: 70%;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="page">
     <header>
       <img class="logo" src="CommitToPaper_2026_logo-color.png" alt="CommitToPaper logo">
+      <h1 class="header-title">Consultancy on research grant writing</h1>
     </header>
 
     <main>
-      <section class="content" aria-labelledby="page-title">
-        <h1 id="page-title">Support for research grant writing</h1>
-
-        <p class="lead">CommitToPaper OÜ is an Estonian private limited company that helps researchers prepare stronger grant applications.</p>
+      <section class="content">
+        <p>CommitToPaper OÜ is an Estonian private limited company that helps researchers prepare grant applications.</p>
 
         <p>Support is available for grant writing, training, and consulting.</p>
-
-        <ul class="services">
-          <li>Writing</li>
-          <li>Training</li>
-          <li>Consulting</li>
-        </ul>
       </section>
     </main>
 
     <footer>
       <h2>Contact</h2>
 
-      <form action="mailto:leonetta.pavanello@gmail.com" method="post" enctype="text/plain">
+      <form action="mailto:committopaper@gmail.com" method="post" enctype="text/plain">
         <label>
           Name
           <input type="text" name="name" required>
