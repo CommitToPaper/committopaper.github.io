@@ -4,8 +4,191 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CommitToPaper</title>
+  <link rel="icon" href="CommitToPaper_2026_logo-bw.png" type="image/png">
+  <style>
+    :root {
+      --teal: #00939D;
+      --amber: #FFC27B;
+      --light-teal: #5ac9d4;
+      --pale-teal: #befbff;
+      --orange: #ff8b42;
+      --text: #1f2a2e;
+      --background: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: min(100%, 56em);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--light-teal);
+      border-right: 1px solid var(--light-teal);
+    }
+
+    header {
+      padding: 1.5rem 2rem;
+      border-bottom: 4px solid var(--amber);
+    }
+
+    .logo {
+      width: 12rem;
+      max-width: 70%;
+      height: auto;
+      display: block;
+    }
+
+    main {
+      flex: 1;
+      padding: 4rem 2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .content {
+      max-width: 42em;
+    }
+
+    h1 {
+      margin: 0 0 1rem;
+      color: var(--teal);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+    }
+
+    .lead {
+      margin: 0 0 1.5rem;
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 2rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .services li {
+      padding: 0.6rem 0.9rem;
+      background: var(--pale-teal);
+      border-left: 4px solid var(--teal);
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 2rem;
+      background: var(--teal);
+      color: #ffffff;
+    }
+
+    footer h2 {
+      margin: 0 0 1rem;
+      font-size: 1.4rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    label {
+      display: grid;
+      gap: 0.3rem;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 0;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 8rem;
+      resize: vertical;
+    }
+
+    button {
+      width: fit-content;
+      padding: 0.8rem 1.2rem;
+      border: 0;
+      background: var(--amber);
+      color: var(--text);
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--orange);
+    }
+  </style>
 </head>
 <body>
-Hello World!
+  <div class="page">
+    <header>
+      <img class="logo" src="CommitToPaper_2026_logo-color.png" alt="CommitToPaper logo">
+    </header>
+
+    <main>
+      <section class="content" aria-labelledby="page-title">
+        <h1 id="page-title">Support for research grant writing</h1>
+
+        <p class="lead">CommitToPaper OÜ is an Estonian private limited company that helps researchers prepare stronger grant applications.</p>
+
+        <p>Support is available for grant writing, training, and consulting.</p>
+
+        <ul class="services">
+          <li>Writing</li>
+          <li>Training</li>
+          <li>Consulting</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <h2>Contact</h2>
+
+      <form action="mailto:committopaper@gmail.com" method="post" enctype="text/plain">
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" required></textarea>
+        </label>
+
+        <button type="submit">Send message</button>
+      </form>
+    </footer>
+  </div>
 </body>
 </html>
